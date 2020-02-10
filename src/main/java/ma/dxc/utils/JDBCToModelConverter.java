@@ -12,7 +12,7 @@ public class JDBCToModelConverter {
 	
 	public static final String CONNECTION_URL_PREFIX_POSTRESQL = "jdbc:postgresql:";
 	public static final String CONNECTION_URL_PREFIX_MYSQL = "jdbc:mysql:";
-	public static final String CONNECTION_URL_PREFIX_ORACLE = "jdbc:oracle:";
+	public static final String CONNECTION_URL_PREFIX_ORACLE = "jdbc:oracle:thin:";
 	
 	private String connectionURL;
 	private String host;
@@ -45,7 +45,7 @@ public class JDBCToModelConverter {
 			this.connectionURL = CONNECTION_URL_PREFIX_POSTRESQL + "//" + host + "/" + this.databaseName;
 		}
 		else if(prefix.equals(CONNECTION_URL_PREFIX_ORACLE)) {
-			this.connectionURL = CONNECTION_URL_PREFIX_ORACLE + "//" + host + "/" + this.databaseName;
+			this.connectionURL = CONNECTION_URL_PREFIX_ORACLE + "@" + host + ":" + this.databaseName;
 		}
 		else if(prefix.equals(CONNECTION_URL_PREFIX_MYSQL)) {
 			this.connectionURL = CONNECTION_URL_PREFIX_MYSQL + "//" + host + "/" + this.databaseName;

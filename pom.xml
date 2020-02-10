@@ -42,6 +42,15 @@
 	    <artifactId>openjpa</artifactId>
 	    <version>3.1.0</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.openjpa/openjpa -->
+	<dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc</artifactId>
+		<version>8</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/lib/ojdbc8.jar</systemPath>
+	</dependency>
+	
   </dependencies>
   
 </project>
